@@ -1,15 +1,15 @@
-# ROS Beginner Tutorials Project
+# ROS Beginner Tutorials Project (Week10 HW)
 [![Build Status](https://travis-ci.org/htsai51/beginner_tutorials.svg?branch=master)](https://travis-ci.org/htsai51/beginner_tutorials)
 [![Coverage Status](https://coveralls.io/repos/github/htsai51/beginner_tutorials/badge.svg?branch=master)](https://coveralls.io/github/htsai51/beginner_tutorials?branch=master)
 ----
 
 ## Overview
 
-This is a simple ROS project which demonstrates the concepts of 
+This is a simple continuing ROS project which demonstrates the concepts of 
 
-- Nodes
-- Topics
-- Publisher/Subscriber
+- Service
+- Logging
+- Launch Files
 
 There are 2 nodes in this project.  Talker, the publisher node, registers to master to publish a message type of std_msgs/String on topic chatter.  Listener, the subscriber node, subscribes on chatter topic with master and prints out the message on screen.
 
