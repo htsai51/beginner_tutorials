@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
         ss << "[" << talker.getName() << "] hello world " << count;
         msg.data = ss.str();
 
-        ROS_INFO_STREAM("Publish: " << msg.data.c_str());
+        ROS_DEBUG_STREAM("Publish: " << msg.data.c_str());
 
         // send messages
         chatter_pub.publish(msg);
