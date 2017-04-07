@@ -22,7 +22,7 @@
  *  SOFTWARE.
  ********************************************************************/
 
-/** @file test.cpp
+/** @file testTalker.cpp
  *  @brief Implementation of unit test for ROS node Talker
  *
  *  This file contains implementation of unit test for ROS node Talker

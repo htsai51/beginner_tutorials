@@ -29,7 +29,7 @@
  *  This file contains test program's
  *  main() function.
  *
- *  This program performs unit test of path finding algorithm
+ *  This program performs unit test of ROS Talker node
  *
  *
  *  @author Huei Tzu Tsai
