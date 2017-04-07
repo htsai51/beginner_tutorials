@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
         n.serviceClient<beginner_tutorials::talkerService>("talkerService");
 
     // Wait for service becomes ready (timeout 60 seconds)
-    ret = ros::service::waitForService("talkerService", 60000);
+    ret = ros::service::waitForService("talkerService", 5000);
 
     if (ret == false) {
         ROS_WARN_STREAM("Timout waiting for talkerService");
