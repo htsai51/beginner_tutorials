@@ -25,6 +25,7 @@
 #include <stdlib.h>
 #include <ros/ros.h>
 #include <std_msgs/String.h>
+#include <tf/transform_broadcaster.h>
 #include <string>
 #include <sstream>
 #include "talker_class.hpp"
@@ -55,6 +56,10 @@ int main(int argc, char **argv) {
     ros::ServiceServer server =
         n.advertiseService("talkerService", &Talker::updateTalkerName, &talker);
 
+    // TF broadcaster
+    tf::TransformBroadcaster br;
+    tf::Transform transform;
+
 
     // Register to master to publish topic chatter
     // Anyone subscribing to this topic name will receive messages
@@ -77,6 +82,14 @@ int main(int argc, char **argv) {
 
         // send messages
         chatter_pub.publish(msg);
+
+        // broadcast TF frame /talker
+        transform.setOrigin(tf::Vector3(2.0*sin(ros::Time::now().toSec()),
+                                        2.0*cos(ros::Time::now().toSec()),
+                                        0.0));
+        transform.setRotation(tf::Quaternion(1, 0, 0, 0));
+        br.sendTransform(tf::StampedTransform(transform, ros::Time::now(),
+                                              "world", "talker"));
 
         ros::spinOnce();
 
