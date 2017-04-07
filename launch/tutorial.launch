@@ -1,5 +1,6 @@
 <launch>
     <arg name="freq" default="10"/>
+    <arg name="enable_record" default="false"/>
 
     <node
         pkg="beginner_tutorials"
@@ -14,5 +15,13 @@
         type="listener"
         output="screen"
         launch-prefix="gnome-terminal --command"
+    />
+
+    <node
+        pkg="rosbag"
+        name="record"
+        type="record"
+        args="-a -O session.bag"
+        if="$(arg enable_record)"
     />
 </launch>
