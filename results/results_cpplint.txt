@@ -1,3 +1,5 @@
+Done processing ./test/main.cpp
+Done processing ./test/testTalker.cpp
 Done processing ./src/listener_class.cpp
 Done processing ./src/listener.cpp
 Done processing ./src/talker_class.cpp
